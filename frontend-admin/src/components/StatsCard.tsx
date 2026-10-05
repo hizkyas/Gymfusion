@@ -11,32 +11,32 @@ interface StatsCardProps {
 
 const colorMap = {
   emerald: {
-    bg: 'rgba(16, 185, 129, 0.12)',
-    border: 'rgba(16, 185, 129, 0.25)',
-    icon: '#10b981',
-    glow: 'rgba(16, 185, 129, 0.3)',
-    text: '#10b981',
+    bg: 'rgba(129, 178, 154, 0.12)',
+    border: 'rgba(129, 178, 154, 0.28)',
+    icon: '#81B29A',
+    glow: 'rgba(129, 178, 154, 0.25)',
+    text: '#81B29A',
   },
   violet: {
-    bg: 'rgba(139, 92, 246, 0.12)',
-    border: 'rgba(139, 92, 246, 0.25)',
-    icon: '#8b5cf6',
-    glow: 'rgba(139, 92, 246, 0.3)',
-    text: '#8b5cf6',
+    bg: 'rgba(224, 122, 95, 0.12)',
+    border: 'rgba(224, 122, 95, 0.28)',
+    icon: '#E07A5F',
+    glow: 'rgba(224, 122, 95, 0.25)',
+    text: '#E07A5F',
   },
   amber: {
-    bg: 'rgba(245, 158, 11, 0.12)',
-    border: 'rgba(245, 158, 11, 0.25)',
-    icon: '#f59e0b',
-    glow: 'rgba(245, 158, 11, 0.3)',
-    text: '#f59e0b',
+    bg: 'rgba(233, 196, 106, 0.12)',
+    border: 'rgba(233, 196, 106, 0.28)',
+    icon: '#E9C46A',
+    glow: 'rgba(233, 196, 106, 0.25)',
+    text: '#E9C46A',
   },
   sky: {
-    bg: 'rgba(14, 165, 233, 0.12)',
-    border: 'rgba(14, 165, 233, 0.25)',
-    icon: '#0ea5e9',
-    glow: 'rgba(14, 165, 233, 0.3)',
-    text: '#0ea5e9',
+    bg: 'rgba(69, 123, 157, 0.12)',
+    border: 'rgba(69, 123, 157, 0.28)',
+    icon: '#457B9D',
+    glow: 'rgba(69, 123, 157, 0.25)',
+    text: '#61A5C2',
   },
 };
 
@@ -46,7 +46,7 @@ export const StatsCard: React.FC<StatsCardProps> = ({
   const c = colorMap[color];
 
   return (
-    <div className="stats-card" style={{ borderColor: c.border, background: `linear-gradient(135deg, ${c.bg}, rgba(15,15,25,0.8))` }}>
+    <div className="stats-card" style={{ borderColor: c.border, background: `linear-gradient(135deg, ${c.bg}, rgba(27,25,23,0.9))` }}>
       <div className="stats-card__header">
         <div className="stats-card__icon-wrap" style={{ background: c.bg, boxShadow: `0 0 20px ${c.glow}` }}>
           <Icon size={22} color={c.icon} />

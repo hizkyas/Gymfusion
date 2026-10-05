@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { login, type AuthResponse } from '../services/api';
-import { Loader2, Dumbbell } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
+import { TerracottaLogo } from '../components/TerracottaLogo';
 
 interface LoginPageProps {
   onLogin: (token: string) => void;
@@ -15,7 +16,7 @@ export const Login: React.FC<LoginPageProps> = ({ onLogin }) => {
   const mutation = useMutation<AuthResponse, Error, { email: string; password: string }>({
     mutationFn: login,
     onSuccess: (data) => {
-      localStorage.setItem('gymfusion_token', data.token);
+      localStorage.setItem('gym_token', data.token);
       onLogin(data.token);
     },
     onError: (err: any) => {
@@ -33,9 +34,9 @@ export const Login: React.FC<LoginPageProps> = ({ onLogin }) => {
     <div className="login-page">
       <div className="login-card">
         <div className="login-card__logo">
-          <Dumbbell size={36} color="#8b5cf6" />
+          <TerracottaLogo size={42} />
         </div>
-        <h1 className="login-card__title">Gymfusion</h1>
+        <h1 className="login-card__title">GymOS</h1>
         <p className="login-card__subtitle">Admin & Front-Desk Portal</p>
 
         <form onSubmit={handleSubmit} className="login-form">

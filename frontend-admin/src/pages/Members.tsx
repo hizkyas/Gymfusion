@@ -4,11 +4,11 @@ import { getMembers, type User } from '../services/api';
 import { Search, UserCheck, UserX, Users } from 'lucide-react';
 
 const statusColors: Record<string, { bg: string; text: string; label: string }> = {
-  active:   { bg: 'rgba(16,185,129,0.15)', text: '#10b981', label: 'Active' },
-  trialing: { bg: 'rgba(14,165,233,0.15)', text: '#0ea5e9', label: 'Trial' },
-  past_due: { bg: 'rgba(245,158,11,0.15)', text: '#f59e0b', label: 'Past Due' },
-  canceled: { bg: 'rgba(239,68,68,0.15)',  text: '#ef4444', label: 'Canceled' },
-  paused:   { bg: 'rgba(107,114,128,0.15)', text: '#9ca3af', label: 'Paused' },
+  active:   { bg: 'rgba(129, 178, 154, 0.18)', text: '#81B29A', label: 'Active' },
+  trialing: { bg: 'rgba(69, 123, 157, 0.18)', text: '#61A5C2', label: 'Trial' },
+  past_due: { bg: 'rgba(233, 196, 106, 0.18)', text: '#E9C46A', label: 'Past Due' },
+  canceled: { bg: 'rgba(230, 57, 70, 0.18)',  text: '#E63946', label: 'Canceled' },
+  paused:   { bg: 'rgba(120, 113, 108, 0.18)', text: '#A8A29E', label: 'Paused' },
 };
 
 function getInitials(name: string): string {
@@ -121,8 +121,8 @@ export const Members: React.FC = () => {
                     <td className="table-cell-muted">{formatDate(member.created_at)}</td>
                     <td>
                       {member.is_active
-                        ? <UserCheck size={18} color="#10b981" />
-                        : <UserX size={18} color="#ef4444" />
+                        ? <UserCheck size={18} color="#81B29A" />
+                        : <UserX size={18} color="#E63946" />
                       }
                     </td>
                   </tr>

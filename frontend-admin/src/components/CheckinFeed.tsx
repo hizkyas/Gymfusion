@@ -16,11 +16,11 @@ function getInitials(name: string): string {
 }
 
 const statusColors: Record<string, string> = {
-  active: '#10b981',
-  trialing: '#0ea5e9',
-  past_due: '#f59e0b',
-  canceled: '#ef4444',
-  paused: '#6b7280',
+  active: '#81B29A',
+  trialing: '#61A5C2',
+  past_due: '#E9C46A',
+  canceled: '#E63946',
+  paused: '#A8A29E',
 };
 
 export const CheckinFeed: React.FC = () => {
@@ -69,7 +69,7 @@ export const CheckinFeed: React.FC = () => {
       <div className="checkin-feed__list">
         {checkIns.length === 0 ? (
           <div className="checkin-feed__empty">
-            <Clock size={32} color="#4b5563" />
+            <Clock size={32} color="#78716C" />
             <p>No check-ins yet today</p>
           </div>
         ) : (
@@ -83,7 +83,7 @@ export const CheckinFeed: React.FC = () => {
 };
 
 const CheckinRow: React.FC<{ ci: RecentCheckIn }> = ({ ci }) => {
-  const statusColor = statusColors[ci.subscription_status] || '#6b7280';
+  const statusColor = statusColors[ci.subscription_status] || '#A8A29E';
 
   return (
     <div className={`checkin-row ${ci.access_granted ? 'checkin-row--granted' : 'checkin-row--denied'}`}>
@@ -108,8 +108,8 @@ const CheckinRow: React.FC<{ ci: RecentCheckIn }> = ({ ci }) => {
       </div>
       <div className="checkin-row__badge">
         {ci.access_granted
-          ? <CheckCircle size={20} color="#10b981" />
-          : <XCircle size={20} color="#ef4444" />
+          ? <CheckCircle size={20} color="#81B29A" />
+          : <XCircle size={20} color="#E63946" />
         }
       </div>
     </div>
